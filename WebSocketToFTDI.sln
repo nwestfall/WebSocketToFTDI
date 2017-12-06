@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2002
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSocketToFTDI", "WebSocketToFTDI\WebSocketToFTDI.csproj", "{5BDE77FC-987A-4EBE-BC81-73FC6C8A9968}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSocketToFTDI.Tests", "WebSocketToFTDI.Tests\WebSocketToFTDI.Tests.csproj", "{A7333B42-238B-4A62-9D81-B4CCD069131F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5BDE77FC-987A-4EBE-BC81-73FC6C8A9968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BDE77FC-987A-4EBE-BC81-73FC6C8A9968}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BDE77FC-987A-4EBE-BC81-73FC6C8A9968}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5BDE77FC-987A-4EBE-BC81-73FC6C8A9968}.Debug|x64.Build.0 = Debug|Any CPU
+		{5BDE77FC-987A-4EBE-BC81-73FC6C8A9968}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BDE77FC-987A-4EBE-BC81-73FC6C8A9968}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BDE77FC-987A-4EBE-BC81-73FC6C8A9968}.Release|x64.ActiveCfg = Release|Any CPU
+		{5BDE77FC-987A-4EBE-BC81-73FC6C8A9968}.Release|x64.Build.0 = Release|Any CPU
+		{A7333B42-238B-4A62-9D81-B4CCD069131F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7333B42-238B-4A62-9D81-B4CCD069131F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7333B42-238B-4A62-9D81-B4CCD069131F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A7333B42-238B-4A62-9D81-B4CCD069131F}.Debug|x64.Build.0 = Debug|Any CPU
+		{A7333B42-238B-4A62-9D81-B4CCD069131F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7333B42-238B-4A62-9D81-B4CCD069131F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7333B42-238B-4A62-9D81-B4CCD069131F}.Release|x64.ActiveCfg = Release|Any CPU
+		{A7333B42-238B-4A62-9D81-B4CCD069131F}.Release|x64.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A150E0AC-D7E9-4E8A-A934-979D48F799A4}
+	EndGlobalSection
+EndGlobal
