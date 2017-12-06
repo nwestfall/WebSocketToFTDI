@@ -90,6 +90,11 @@ namespace WebSocketToFTDI
             Start();
         }
 
+        /// <summary>
+        /// Default ctor with url and port
+        /// </summary>
+        /// <param name="url">The url.</param>
+        /// <param name="port">The port.</param>
         public WebSocketManager(string url, int port)
         {
             if (string.IsNullOrWhiteSpace(url))
