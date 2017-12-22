@@ -53,6 +53,8 @@ namespace WebSocketToFTDI
         private readonly object _ftLock = new object();
         private Thread _writeLoop;
         private CancellationTokenSource _writeLoopCancelToken;
+        public static FTDIManager Instance { get; private set; }
+        public static bool IsInstanceRunning => Instance != null;
         #endregion
 
         /// <summary>
@@ -65,6 +67,8 @@ namespace WebSocketToFTDI
             _handle = 0;
 
             Start();
+
+            Instance = this;
         }
 
         /// <summary>
@@ -78,6 +82,8 @@ namespace WebSocketToFTDI
             _handle = 0;
 
             Start();
+
+            Instance = this;
         }
 
         /// <summary>
@@ -142,6 +148,27 @@ namespace WebSocketToFTDI
 
             lock (_ftLock)
                 _buffer[pos] = value;
+        }
+
+        /// <summary>
+        /// Set multiple values at the same time.  If a value is null, it won't update the FTDI
+        /// buffer.
+        /// </summary>
+        /// <param name="values">The value</param>
+        public void SetValues(byte?[] values)
+        {
+            if (values.Length != Options.BUFFER_SIZE)
+                throw new ArgumentOutOfRangeException("Values array is larger than the buffer size");
+
+            lock(_ftLock)
+            {
+                for(var i = 0; i < Options.BUFFER_SIZE; i++)
+                {
+                    var newValue = values[i];
+                    if (newValue.HasValue)
+                        _buffer[i] = newValue.Value;
+                }
+            }
         }
 
         private void Open()
@@ -223,6 +250,7 @@ namespace WebSocketToFTDI
                 {
                     // TODO: dispose managed state (managed objects).
                     Stop();
+                    Instance = null;
                 }
 
                 _buffer = null;

@@ -12,6 +12,16 @@ namespace WebSocketToFTDI.Tests
         private FTDIManager manager = new FTDIManager();
 
         /// <summary>
+        /// Can see if instance is running and get that instance
+        /// </summary>
+        [TestMethod]
+        public void FTDIInstanceIsAvailable()
+        {
+            Assert.IsTrue(FTDIManager.IsInstanceRunning);
+            Assert.IsNotNull(FTDIManager.Instance);
+        }
+
+        /// <summary>
         /// Opening of FTDI
         /// </summary>
         [TestMethod]
