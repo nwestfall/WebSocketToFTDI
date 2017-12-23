@@ -17,11 +17,6 @@ namespace WebSocketToFTDI.Behaviors
         public DMXWebSocketBehavior()
         {
             EmitOnPing = true;
-#if DEBUG
-            Log.Level = LogLevel.Debug;
-#else
-            Log.Level = LogLevel.Warn;
-#endif
         }
 
         /// <summary>
@@ -82,7 +77,12 @@ namespace WebSocketToFTDI.Behaviors
             _numberOfConnections++;
 
             if (_ftdiManager == null)
-                _ftdiManager = new FTDIManager();
+            {
+                if (FTDIManager.IsInstanceRunning)
+                    _ftdiManager = FTDIManager.Instance;
+                else
+                    _ftdiManager = new FTDIManager();
+            }
         }
     }
 }
